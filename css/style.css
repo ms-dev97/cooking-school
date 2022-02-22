@@ -1,0 +1,763 @@
+/* Global Rules */
+*{
+    box-sizing: border-box
+}
+body{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+ul{
+    margin: 0;
+    padding: 0;
+    list-style: none
+}
+a{
+    text-decoration: none;
+    color: #fff
+}
+.container{
+    padding: 0 6vw
+}
+section{
+    padding-top: 50px;
+    padding-bottom: 50px
+}
+.section-title{
+    color: #223d61;
+    padding-bottom: 3rem;
+    position: relative;
+    text-align: center;
+    font-size: 2.5rem;
+    text-transform: uppercase
+}
+.section-title::after{
+    content: '';
+    position: absolute;
+    width: 127px;
+    height: 10px;
+    background: url('../img/separator.png');
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%)
+}
+img{
+    max-width: 100%
+}
+
+/* Loading */
+.loading{
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100
+}
+
+/* Header Style */
+header{
+    background: url('../img/homebg.jpg');
+    color: #fff;
+    position: relative;
+    min-height: 100vh
+}
+.overlay{
+    background: rgba(0,0,0,.6);
+    min-height: 100vh
+}
+header .main-nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 35px;
+    padding-bottom: 10px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    transition: background-color 0.5s;
+    z-index: 10
+}
+header .nav-list{
+    display: flex;
+    font-size: 1.125rem;
+    text-transform: uppercase;
+    transition: max-height 0.7s
+}
+header .nav-list a{
+    padding: 0 1rem 1.3rem;
+    display: inline-block;
+    transition: color .3s
+}
+header .nav-list a:hover{
+    color: #f6c23a
+}
+header .main-nav.menu-scroll{
+    background: rgba(34, 61, 97, 0.64);
+    backdrop-filter: blur(7px);
+}
+header .nav-list li.active a{
+    background: url('../img/selectmenu.png') bottom no-repeat;
+    color: #f6c23a
+}
+header .nav-list li:last-child{
+    color: #f6c23a;
+    position: relative
+}
+header .nav-list li:last-child input{
+    position: absolute;
+    bottom: -100%;
+    right: 0;
+    border: 1px solid #f6c23a;
+    background: #000;
+    padding: 20px;
+    height: 30px;
+    width: 300px;
+    border-radius: 30px;
+    color: #f6c23a;
+    outline: none;
+    display: none
+}
+header .nav-list li.open input{
+    display: block
+}
+.navicon{display: none}
+header .header-slider{
+    padding-top: 7rem;
+    padding-bottom: 5rem;
+    text-transform: uppercase;
+}
+header .slider-wrapper {
+    overflow: hidden;
+}
+header .slider {
+    display: flex;
+    width: 100%;
+    transition: transform 0.3s;
+}
+header .header-slider .slide{
+    min-width: 100%
+}
+header .header-slider h1{
+    font-size: 5rem;
+    margin-bottom: 0
+}
+header .header-slider span{
+    color: #5e9a28;
+    display: block;
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 20px 0 40px
+}
+header .header-slider a{
+    background: #5e9a28;
+    display: inline-block;
+    padding: 1rem 3rem;
+    border-radius: 22px;
+    font-size: 20px
+}
+header .zigzag{
+    position: absolute;
+    width: 100%;
+    height: 12px;
+    bottom: -1px;
+    left: 0;
+    background: url('../img/zigzag.png')
+}
+header .diamonds{
+    display: flex;
+    justify-content: center;
+    padding-bottom: 80px
+}
+header .diamond{
+    width: 10px;
+    height: 10px;
+    transform: rotate(45deg);
+    background: #5e9a28;
+    margin-right: 20px;
+    cursor: pointer
+}
+header .diamond.active{
+    background: #f6c23a
+}
+
+/* Services Section */
+.services .dishes{
+    display: flex;
+    justify-content: space-between
+}
+.services .dish{
+    width: 31%;
+    text-align: center
+}
+.services .dish > div:first-child{
+    margin-bottom: 25px
+}
+.services .dish img{
+    height: 70px
+}
+.services .dish h3{
+    color: #223d61;
+    font-size: 1.5rem;
+    text-transform: uppercase
+}
+.services .dish p{
+    color: #797979;
+    font-size: 1.1rem
+}
+
+/* Skills Section */
+.skills{
+    background: #5e9a28;
+    text-align: center;
+    color: #fff;
+    padding: 80px 5vw 80px
+}
+.skills p{
+    font-size: 1.125rem;
+    line-height: 1.5
+}
+.skills p:first-child{
+    color: #f6c23a;
+    text-transform: uppercase;
+    margin: 20px 0 80px
+}
+.skills h2{
+    text-transform: uppercase;
+    font-size: 2rem;
+    margin: 2rem 2.5rem
+}
+
+/* Portfolio Section */
+.portfolio .filter{
+    text-align: center;
+    margin: 70px 0 100px
+}
+.portfolio .filter li{
+    color: #223d61;
+    text-transform: uppercase;
+    font-size: 1.3rem;
+    border: 1px solid #ddd;
+    padding: 0.5rem 2.5rem;
+    display: inline-block;
+    margin-left: 5px;
+    cursor: pointer;
+    border-radius: 15px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+    transition: 0.3s
+}
+.portfolio .filter li.active{
+    background: #5e9a28;
+    border-color: #5e9a28;
+    color: #fff
+}
+.portfolio .filter-imgs{
+    position: relative;
+    overflow: hidden;
+    padding: 0;
+    margin: 0 6vw;
+}
+.portfolio .filter-img{
+    width: 32%;
+    margin-bottom: 10px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: 0.3s
+}
+/* .portfolio .filter-img.filtered{
+    opacity: 0;
+    transform: translate(100%,-100%) scale(0);
+    position: absolute
+} */
+.portfolio .filter-img .hidden{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    text-align: center;
+    background: rgba(255, 255, 255, .7);
+    color: #223d61;
+    opacity: 0;
+    transition: opacity .3s
+}
+.portfolio .filter-img:hover .hidden{
+    opacity: 1
+}
+.portfolio .filter-img .hidden h3{
+    font-size: 22px;
+    margin: 10% 0 10px
+}
+.portfolio .filter-img .hidden span{
+    display: block;
+    color: #5e9a28;
+    margin-bottom: 15px;
+    font-size: 16px
+}
+.portfolio .filter-img .hidden i{
+    font-size: 48px
+}
+
+/* Newsletter Section */
+.newsletter{
+    background: #223d61;
+    color: #fff;
+    text-align: center;
+    padding: 80px 5vw
+}
+.newsletter h2{
+    text-transform: uppercase;
+    font-size: 2.5rem;
+    margin-top: 0
+}
+.newsletter p{
+    line-height: 1.5;
+    margin-bottom: 60px
+}
+.newsletter form input{
+    border: none;
+    height: 40px;
+    border-radius: 30px
+}
+.newsletter form input[type="text"]{
+    padding: 0 20px;
+    color: #5e9a28;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    background: #182e4c;
+    width: 40%
+}
+.newsletter form input[type="submit"]{
+    width: 50px;
+    color: #fff;
+    width: 20%;
+    font-size: 1.125rem;
+    background: #5e9a28
+}
+.newsletter form input[type="text"]::-moz-placeholder{color: #5e9a28}
+.newsletter form input[type="text"]::-webkit-input-placeholder{color: #5e9a28}
+
+/* Fruits section */
+.fruits .books{
+    display: flex;
+    margin-top: 100px
+}
+.fruits .books .img-left{
+    margin-right: 5%;
+    position: relative;
+    bottom: -50px;
+    align-self: flex-end
+}
+.fruits .books .img-left img{display: block}
+.fruits .progress-box{
+    display: flex;
+    flex-wrap: wrap
+}
+.fruits .progress-box:not(:last-child){
+    margin-bottom: 60px
+}
+.fruits .progress-box > div:first-child{
+    margin: 40px 4% 0 0;
+    width: 15%
+}
+.fruits .progress-box div:nth-child(2){
+    width: 80%
+}
+.fruits .progress-box h3{
+    font-size: 2.2rem;
+    color: #797979;
+    text-transform: uppercase;
+    margin-top: 0;
+    margin-bottom: 0.5rem
+}
+.fruits .progress-box p{
+    color: #797979;
+    line-height: 1.5
+}
+.fruits .progress-box .percent{
+    width: 100%;
+    background: #ddd;
+    margin-top: 50px;
+    position: relative
+}
+.fruits .progress-box .percent > div:first-child{
+    width: 75%;
+    background: #5e9a28;
+    height: 2px
+}
+.fruits .progress-box .percent > div:nth-child(2){
+    position: absolute;
+    color: #5e9a28;
+    border: 1px solid;
+    border-radius: 3px;
+    padding: 5px;
+    top: -44px;
+    left: 75%;
+    width: auto;
+    transform: translateX(-50%)
+}
+.fruits .progress-box .percent > div:nth-child(2)::before{
+    content: '';
+    position: absolute;
+    bottom: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 6px solid transparent;
+    border-top-color: #5e9a28
+}
+
+/* Blog Section */
+.blog{
+    background: #f1eee6;
+    text-align: center
+}
+.blog h2 + p{
+    font-size: 1.125rem
+}
+.blog .slider{
+    margin-top: 100px;
+    overflow: hidden
+}
+.blog .blogs{
+    white-space: nowrap;
+    transition: transform 0.5s
+}
+.blog .blogs > li{
+    width: 22%;
+    border: 2px solid #5e9a28;
+    padding: 2rem 0.5rem;
+    background: #fff;
+    margin-right: 3%;
+    white-space: normal;
+    display: inline-block
+}
+.blog .blogs > li h4{
+    color: #223d61;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    font-size: 1.2rem
+}
+.blog .blogs > li h4 + span{
+    color: #c0bbad
+}
+.blog .blogs > li span i{
+    margin-right: 5px
+}
+.blog .blogs > li > p{
+    color: #797979; 
+    position: relative;
+    padding-bottom: 1.5rem
+}
+.blog .blogs > li > p::after{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30px;
+    height: 3px;
+    background: #5e9a28
+}
+.blog .blogs > li > p + span{
+    color: #5e9a28
+}
+.blog .slider .controls{
+    margin-top: 30px;
+    color: #fff
+}
+.blog .slider .controls i{
+    background: #5e9a28;
+    cursor: pointer;
+    padding: 0.5rem;
+    margin-right: 10px
+}
+.blog .posts{
+    color: #fff;
+    font-size: 1.2rem;
+    background: #5e9a28;
+    padding: 0.7rem 3rem;
+    display: inline-block;
+    border-radius: 30px;
+    margin-top: 60px;
+    cursor: pointer;
+    text-transform: uppercase
+}
+
+/* Impression Section */
+.impression{
+    background: #5e9a28;
+    text-align: center
+}
+.impression h3{
+    font-size: 1.3rem;
+    color: #f6c23a;
+    text-transform: uppercase;
+    letter-spacing: 2px
+}
+.impression .slider{
+    color: #fff;
+    overflow: hidden;
+    margin: 100px 0
+}
+.impression .slide{
+    display: flex;
+    white-space: nowrap;
+    transition: transform 0.5s
+}
+.impression .slide > div{
+    min-width: 100%;
+    white-space: normal
+}
+.impression .slide > div > p{
+    font-size: 2rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 2px;
+    margin-bottom: 0.8rem;
+    padding-bottom: 1rem;
+    position: relative
+}
+.impression .slide > div > p::after{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 127px;
+    height: 10px;
+    transform: translateX(-50%);
+    background: url('../img/whiseparator.png')
+}
+.impression .bubbles{
+
+}
+.impression .bubbles > div{
+    display: inline-block;
+    margin: 0 7px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid #ccc;
+    opacity: 0.5;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+.impression .bubbles > div.active{
+    transform: scale(2.5);
+    transform-origin: bottom;
+    opacity: 1;
+    border-color: #f33;
+    margin: 0 30px
+}
+
+/* Numbers Section */
+.numbers{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 100px 6vw 100px 0
+}
+.numbers > div:first-child{
+    width: 40%;
+    padding-left: 10vw;
+    background: #223d61;
+    color: #fff;
+    clip-path: polygon(0 0, 100% 0, 80% 100%, 0 100%)
+}
+.numbers > div:first-child h2{
+    text-transform: uppercase;
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem
+}
+.numbers > div:not(:first-child){
+    width: 18%;
+    color: #223d61;
+    text-align: center;
+    border-bottom: 5px solid #f1eee6
+}
+.numbers i{
+    color: #5e9a28;
+    font-size: 3.5rem
+}
+.numbers i + p{
+    font-size: 2.8rem;
+    font-weight: 600;
+    margin: 0.5rem 0
+}
+.numbers i + p + span{
+    font-weight: 600;
+    font-size: 1.125rem;
+    text-transform: uppercase
+}
+
+/* Footer */
+footer{
+    padding: 60px 0;
+    background: #f1eee6
+}
+footer .upper{
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 70px
+}
+footer .upper > div{
+    width: 30%
+}
+footer .upper > div h3{
+    font-size: 2rem;
+    text-transform: uppercase;
+    font-weight: normal;
+    color: #223d61;
+    padding-bottom: 1rem;
+    margin-top: 0;
+    position: relative
+}
+footer .upper > div h3::after{
+    position: absolute;
+    content: '';
+    bottom: 0;
+    left: 0;
+    width: 30px;
+    height: 3px;
+    background: #5e9a28
+}
+footer .contact li{
+    line-height: 1.5;
+    color: #223d61;
+    margin-bottom: 5px
+}
+footer .contact i{
+    width: 20px;
+    margin-right: 5px
+}
+footer .news img{
+    margin: 0 10px 10px 0
+}
+footer .footer-logo p{
+    color: #797979;
+    padding-right: 15%
+}
+footer .footer-logo a{
+    color: #223d61;
+    font-size: 1.1rem
+}
+footer .lower{
+    color: #aaa79e;
+    display: flex;
+    font-size: 1.125rem;
+    padding: 40px 2vw 0
+}
+footer .lower .copyright i{
+    color: red
+}
+footer .lower .copyright span{
+    color: #5e9a28;
+    margin: 0 5px
+}
+footer .lower i{
+    margin: 0 5px
+}
+footer .lower .social{
+    margin-left: auto
+}
+
+/* Responsive Media Queries */
+@media (max-width: 990px){
+    html{
+        font-size: 90%
+    }
+    .container{padding: 0 10vw}
+    .portfolio .filter-img{
+        width: 48%
+    }
+    .portfolio .filter-img img{
+        width: 100%
+    }
+    .numbers{
+        padding-right: 0
+    }
+    .numbers > div:first-child{
+        width: 80%;
+        margin-bottom: 80px;
+        padding-right: 10%
+    }
+    .numbers > div:not(:first-child){
+        width: 32%;
+        padding: 0 2%
+    }
+}
+@media (max-width: 760px){
+    html{
+        font-size: 80%
+    }
+    .container{padding: 0 4vw}
+    .navicon{
+        display: block;
+        cursor: pointer;
+        background: rgba(255, 255, 255, .6);
+        border-radius: 5px;
+        color: #555
+    }
+    .navicon i{
+        font-size: 1.7rem;
+        padding: 0.5rem 1rem;
+    }
+    header .nav-list{
+        position: absolute;
+        display: block;
+        width: 100%;
+        top: 100%;
+        left: 0px;
+        background: rgba(0,0,0,.6);
+        text-align: center;
+        overflow: hidden;
+        max-height: 0
+    }
+    header .nav-list.visible{
+        max-height: 500px;
+    }
+    header .nav-list li:first-child{
+        padding-top: 20px
+    }
+    header .nav-list li{
+        margin-bottom: 20px
+    }
+    header .header-slider h1{font-size: 4rem}
+    .services .dishes{display: block}
+    .services .dish{
+        width: 100%;
+        margin-bottom: 40px
+    }
+    .portfolio .filter-img{
+        width: 100%;
+        height: 200px;
+        overflow: hidden;
+    }
+    .newsletter form input[type="text"],
+    .newsletter form input[type="submit"]{
+        width: 100%
+    }
+    .fruits .books{
+        flex-wrap: wrap
+    }
+    .fruits .books .img-left{
+        width: 100%;
+        order: 1;
+        margin: 50px 0 0;
+        text-align: center;
+        position: static
+    }
+    .fruits .books .pregress{
+        order: 0
+    }
+}
